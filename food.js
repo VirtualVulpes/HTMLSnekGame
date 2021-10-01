@@ -15,7 +15,7 @@ export function update() {
         
         if(length > highScore){
             highScore = length   
-            document.getElementById("highScore").textContent = "High Score: " + highScore.toString(); 
+            document.getElementById("highScore").textContent = "High Score: " + highScore.toString();
         }
     }
 }
