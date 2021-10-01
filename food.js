@@ -3,6 +3,7 @@ import { randomGridPosition } from './grid.js'
 
 let food = getRandomFoodPosition()
 export let length = 1
+export let highScore = 0
 const EXPANSION_RATE = 3
 
 export function update() {
@@ -11,6 +12,11 @@ export function update() {
         length += 3
         food = getRandomFoodPosition()
         document.getElementById("length").textContent = "Length: " + length.toString(); 
+        
+        if(length > highScore){
+            highScore = length   
+            document.getElementById("highScore").textContent = "High Score: " + highScore.toString(); 
+        }
     }
 }
 
