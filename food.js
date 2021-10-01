@@ -3,15 +3,15 @@ import { randomGridPosition } from './grid.js'
 
 let food = getRandomFoodPosition()
 export let length = 1
-export let highScore = 0
-const EXPANSION_RATE = 3
+export let highScore = 1
+const EXPANSION_RATE = 4
 
 export function update() {
     load()
     
     if (onSnake(food)) {
         expandSnake(EXPANSION_RATE)
-        length += 3
+        length += EXPANSION_RATE
         food = getRandomFoodPosition()
         document.getElementById("length").textContent = "Length: " + length.toString(); 
         
