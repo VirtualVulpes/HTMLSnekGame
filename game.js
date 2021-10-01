@@ -7,9 +7,7 @@ const gameBoard = document.getElementById('game-board')
 
 let gameOver = false
 
-function main(currentTime) {
-    load()
-    
+function main(currentTime) {    
     if(gameOver) {
         if(confirm("Game Over. Press 'OK' to Restart.")){
             window.location = '/'
