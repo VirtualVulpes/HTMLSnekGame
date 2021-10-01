@@ -14,7 +14,6 @@ function main(currentTime) {
         if(confirm("Game Over. Press 'OK' to Restart.")){
             window.location = '/'
         }
-        save(highScore)
         return
     }
 
