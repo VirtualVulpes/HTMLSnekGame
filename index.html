@@ -3,12 +3,12 @@
     <head>
         <title>Snake</title>
         <script>
-            function save() {
+            export function save() {
                 var highScore = document.getElementById('highScore');
                 localStorage.setItem("score", highScore);
             }
             
-            function load(){
+            export function load(){
                 document.getElementById("highScore").textContent = "High Score: " + localStorage.getItem("score");   
             }
         </script>
