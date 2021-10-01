@@ -37,3 +37,11 @@ function getRandomFoodPosition() {
     }
     return newFoodPosition
 }
+
+function save(score) {
+    localStorage.setItem("highScore", score);
+}
+
+function load() {
+    document.getElementById("highScore").textContent = localStorage.getItem("highScore");
+}     
