@@ -13,10 +13,13 @@ export function update() {
         food = getRandomFoodPosition()
         document.getElementById("length").textContent = "Length: " + length.toString(); 
         
-        if(length > highScore){
+        if(length > localStorage.getItem("highScore")){
             highScore = length   
             save(highScore)
         }
+
+        // var snd = new Audio("file.wav");
+        // snd.play();
     }
 }
 

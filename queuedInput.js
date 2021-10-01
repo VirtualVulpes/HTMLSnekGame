@@ -62,4 +62,5 @@ export function removeOldestInput() {
 
 document.addEventListener("DOMContentLoaded", function(){
     document.getElementById("highScore").textContent = "High Score: " + localStorage.getItem("highScore")
+    changeHighScore(localStorage.getItem("highScore"))
 })
