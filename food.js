@@ -6,9 +6,7 @@ export let length = 1
 export let highScore = 1
 const EXPANSION_RATE = 4
 
-export function update() {
-    load()
-    
+export function update() {    
     if (onSnake(food)) {
         expandSnake(EXPANSION_RATE)
         length += EXPANSION_RATE
@@ -17,7 +15,6 @@ export function update() {
         
         if(length > highScore){
             highScore = length   
-            document.getElementById("highScore").textContent = "High Score: " + highScore.toString();
             save(highScore)
         }
     }
@@ -43,7 +40,7 @@ function save(score) {
     localStorage.setItem("highScore", score)
 }
 
-function load() {
+export function load() {
     highScore = localStorage.getItem("highScore")
     document.getElementById("highScore").textContent = "High Score: " + highScore
 }     

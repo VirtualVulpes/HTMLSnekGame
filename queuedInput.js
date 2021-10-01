@@ -59,3 +59,7 @@ export function getInputDirection() {
 export function removeOldestInput() {
     inputDirection.splice(0, 1)
 }
+
+document.addEventListener("DOMContentLoaded", function(){
+    document.getElementById("highScore").textContent = "High Score: " + localStorage.getItem("highScore")
+})
