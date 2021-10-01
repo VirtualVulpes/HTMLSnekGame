@@ -40,9 +40,10 @@ function getRandomFoodPosition() {
 }
 
 function save(score) {
-    localStorage.setItem("highScore", score);
+    localStorage.setItem("highScore", score)
 }
 
 function load() {
-    document.getElementById("highScore").textContent = localStorage.getItem("highScore");
+    highScore = localStorage.getItem("highScore")
+    document.getElementById("highScore").textContent = localStorage.getItem("highScore")
 }     
