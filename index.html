@@ -4,11 +4,11 @@
         <title>Snake</title>
         <script>
             function save(highScore) {
-                localStorage.setItem("highScore", highScore);
+                localStorage.setItem("highScore", document.getElementById("highScore").textContent);
             }
 
             function load(){
-                document.getElementById("highScore").textContent = "High Score: " + localStorage.getItem("highScore").ToString();   
+                document.getElementById("highScore").textContent = localStorage.getItem("highScore").ToString();   
             }
         </script>
         <style>
