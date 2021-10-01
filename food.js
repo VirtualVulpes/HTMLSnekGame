@@ -7,6 +7,9 @@ export let highScore = 0
 const EXPANSION_RATE = 3
 
 export function update() {
+    save(highScore)
+    load()
+    
     if (onSnake(food)) {
         expandSnake(EXPANSION_RATE)
         length += 3
@@ -34,4 +37,12 @@ function getRandomFoodPosition() {
         newFoodPosition = randomGridPosition()
     }
     return newFoodPosition
+}
+
+function save(highScore) {
+    localStorage.setItem("highScore", document.getElementById("highScore").textContent);
+}
+
+function load(){
+    document.getElementById("highScore").textContent = "High Score: " + localStorage.getItem("highScore");   
 }
