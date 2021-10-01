@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>The Fox's Den</title>
+        <title>Snake</title>
         <style>
             body {
                 height: 100vh;
@@ -32,9 +32,19 @@
                 border: .25vmin solid darkseagreen;
             }
             
+            h1 {
+                font-size: 2pc;
+                color: white;
+                position:fixed;
+                left: 20px;
+                bottom: -40px;
+            }    
         </style>
     <script src="game.js" defer type="module"></script>
     </head>
+    <h1>
+        <p id="length">Length: 1</p>
+    </h1>
     <body>
         <div id="game-board"></div>
     </body>

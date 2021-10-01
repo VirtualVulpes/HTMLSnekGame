@@ -1,20 +1,32 @@
 import { getInputDirection } from "./input.js"
+import { outsideGrid } from './grid.js'
 
 export const SNAKE_SPEED = 13
 const snakeBody = [{ x: 19, y: 14 }]
 let newSegments = 0
 
+let cutOut = {x: 1, y: 1}
+let storedPos = {x: 1, y: 1}
+
 export function update() {
     addSegments()
 
     const inputDirection = getInputDirection()
+    
+    if(inputDirection.x === 0 && inputDirection.y === 0) return
 
-    for (let i = snakeBody.length - 2; i >= 0; i--) {
-        snakeBody[i + 1] = { ...snakeBody[i] }
+    storedPos.x = snakeBody[0].x + inputDirection.x
+    storedPos.y = snakeBody[0].y + inputDirection.y
+
+    if (outsideGrid(storedPos)) {
+        return     
     }
+    
+    cutOut = snakeBody.splice(snakeBody.length - 1, 1) [0]
+    cutOut.x = storedPos.x 
+    cutOut.y = storedPos.y
 
-    snakeBody[0].x += inputDirection.x
-    snakeBody[0].y += inputDirection.y
+    snakeBody.splice(0, 0, cutOut)
 }
 
 export function draw(gameBoard) {
@@ -39,7 +51,7 @@ export function onSnake(position, { ignoreHead = false } = {}) {
 }
 
 export function getSnakeHead() {
- return snakeBody[0]
+ return storedPos
 }
 
 export function snakeIntersection() {
