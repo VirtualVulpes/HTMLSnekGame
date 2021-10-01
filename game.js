@@ -45,11 +45,3 @@ function draw() {
 function checkDeath() {
     gameOver = outsideGrid(getSnakeHead()) || snakeIntersection()
 }
-
-function save(highScore) {
-    localStorage.setItem("highScore", highScore);
-}
-
-function load(){
-    document.getElementById("highScore").textContent = "High Score: " + localStorage.getItem("highScore").ToString();   
-}
