@@ -1,4 +1,4 @@
-import { getInputDirection } from "./input.js"
+import { getInputDirection, removeOldestInput } from "./queuedInput.js"
 import { outsideGrid } from './grid.js'
 
 export const SNAKE_SPEED = 13
@@ -10,14 +10,16 @@ let storedPos = {x: 1, y: 1}
 
 export function update() {
     addSegments()
-
-    const inputDirection = getInputDirection()
     
-    if(inputDirection.x === 0 && inputDirection.y === 0) return
+    const inputDirection = getInputDirection()
+
+    if(inputDirection == null) return
 
     storedPos.x = snakeBody[0].x + inputDirection.x
     storedPos.y = snakeBody[0].y + inputDirection.y
 
+    removeOldestInput()
+    
     if (outsideGrid(storedPos)) {
         return     
     }
