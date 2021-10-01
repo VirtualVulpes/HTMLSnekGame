@@ -45,5 +45,5 @@ function save(score) {
 
 function load() {
     highScore = localStorage.getItem("highScore")
-    document.getElementById("highScore").textContent = localStorage.getItem("highScore")
+    document.getElementById("highScore").textContent = highScore
 }     
