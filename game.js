@@ -9,9 +9,10 @@ let gameOver = false
 
 function main(currentTime) {    
     if(gameOver) {
-        if(confirm("Game Over. Press 'OK' to Restart.")){
-            window.location = '/'
-        }
+        document.getElementById('header').style.display = "block"
+        // if(confirm("Game Over. Press 'OK' to Restart.")){
+        //     window.location = '/'
+        // }
         return
     }
 

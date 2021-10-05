@@ -61,6 +61,15 @@ export function removeOldestInput() {
 }
 
 document.addEventListener("DOMContentLoaded", function(){
-    document.getElementById("highScore").textContent = "High Score: " + localStorage.getItem("highScore")
+    let score = localStorage.getItem("highScore")
+
+    if(score == null)
+    {
+        document.getElementById("highScore").textContent = "High Score: 0"
+    }else
+    {
+        document.getElementById("highScore").textContent = "High Score: " + localStorage.getItem("highScore")
+    }
+
     changeHighScore(localStorage.getItem("highScore"))
 })

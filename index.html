@@ -2,6 +2,11 @@
 <html>
     <head>
         <title>Snake</title>
+        <script>
+            function restart() {
+                window.location = '/'
+            }
+        </script>
         <style>
             body {
                 height: 100vh;
@@ -51,6 +56,22 @@
                 font-family:'helvetica';
                 font-weight: normal;
             }  
+
+            h3 {
+                font-size: 3pc;
+                color: white;
+                display: none;
+                text-align: center;
+                padding: 0px;
+                margin: 0px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-50%);
+                font-family:'helvetica';
+                font-weight: normal; 
+            }
+
         </style>
     <script src="game.js" defer type="module"></script>
     </head>
@@ -60,6 +81,11 @@
     <h2>
         <p id="highScore">High Score: 0</p>
     </h2>
+    <h3 id="header">
+        <p id="gameOver">Game Over</p>
+        <br>
+        <button type='button' onclick="restart()" style="color: white;border-radius: 20px;background-color: #38a142; height: 60px; width: 180px; font-size: 2pc; border-color: white; border-style: solid; border-width: 4px; position: relative; top: -70px;">Restart</button>
+    </h3>
     <body>
         <div id="game-board"></div>
     </body>
